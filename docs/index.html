@@ -4,94 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — Lumina Sound</title>
+    <meta name="theme-color" content="#0a1018">
+    <link rel="icon" href="https://kronos1993.github.io/assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
         :root {
-          --ink: #1B1530;
-          --muted: #5F5A73;
-          --line: #E2DCF2;
-          --bg: #F4F1FB;
-          --card: #FFFFFF;
-          --accent: #6D28D9;
+          color-scheme: dark;
+          --bg: #0a1018;
+          --card: #101923;
+          --card-high: #16212d;
+          --line: #1d2a38;
+          --outline: #2a3949;
+          --ink: #e2e7ef;
+          --body: #c9d1dc;
+          --muted: #a1acbb;
+          --accent: #2ee6cf;
+          --accent-2: #a197ff;
+          --accent-container: #0d4a42;
+          --on-accent-container: #a6f6e8;
         }
         * { box-sizing: border-box; }
         body {
           margin: 0;
           background: var(--bg);
           color: var(--ink);
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
           line-height: 1.6;
+          -webkit-font-smoothing: antialiased;
+          overflow-x: hidden;
         }
+        .topbar {
+          position: sticky; top: 0; z-index: 10;
+          background: rgb(10 16 24 / .8);
+          backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+          border-bottom: 1px solid var(--line);
+        }
+        .topbar .inner { max-width: 760px; margin: 0 auto; padding: 0 16px; height: 64px; display: flex; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; color: var(--ink); font-weight: 600; font-size: 17px; text-decoration: none; }
+        .brand img { width: 32px; height: 32px; border-radius: 9px; }
         .wrap {
           max-width: 760px;
           margin: 0 auto;
-          padding: 56px 24px 80px;
+          padding: 48px 16px 80px;
         }
         header {
-          border-bottom: 2px solid var(--line);
-          padding-bottom: 24px;
+          position: relative;
+          padding-bottom: 28px;
           margin-bottom: 32px;
+          border-bottom: 1px solid var(--line);
         }
         header h1 {
-          font-size: 32px;
-          margin: 0 0 8px;
-          letter-spacing: -0.5px;
+          font-size: clamp(32px, 6vw, 44px);
+          font-weight: 700;
+          margin: 0 0 12px;
+          letter-spacing: -0.02em;
+          line-height: 1.15;
+          background: linear-gradient(100deg, var(--accent), var(--accent-2));
+          -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         header p {
           margin: 0;
           color: var(--muted);
-          font-size: 15px;
+          font-size: 16px;
         }
+        header strong { color: var(--ink); }
         .meta {
           display: inline-block;
-          font-family: 'Courier New', monospace;
-          font-size: 13px;
-          letter-spacing: 1px;
-          color: var(--accent);
-          background: var(--card);
-          border: 1px solid var(--line);
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: .1em;
+          color: var(--on-accent-container);
+          background: var(--accent-container);
           border-radius: 999px;
           padding: 6px 14px;
-          margin-top: 12px;
+          margin-top: 16px;
         }
         section {
           background: var(--card);
           border: 1px solid var(--line);
-          border-radius: 16px;
-          padding: 24px 28px;
-          margin-bottom: 20px;
+          border-radius: 24px;
+          padding: 24px;
+          margin-bottom: 16px;
         }
+        @media (min-width: 640px) { section { padding: 28px 32px; } }
         h2 {
           font-size: 19px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
           margin: 0 0 12px;
+          color: var(--ink);
         }
-        p { margin: 0 0 12px; color: var(--ink); }
+        p { margin: 0 0 12px; color: var(--body); }
         p:last-child { margin-bottom: 0; }
-        ul { margin: 0 0 12px; padding-left: 20px; }
+        strong { color: var(--ink); font-weight: 600; }
+        ul { margin: 0 0 12px; padding-left: 20px; color: var(--body); }
         li { margin-bottom: 8px; }
-        a { color: var(--accent); }
+        li::marker { color: var(--accent); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
         .contact-box {
-          background: #F7F5FC;
-          border: 1px dashed var(--line);
-          border-radius: 12px;
+          background: var(--card-high);
+          border: 1px solid var(--outline);
+          border-radius: 16px;
           padding: 16px 20px;
           font-size: 15px;
+          color: var(--body);
+          overflow-wrap: anywhere;
         }
         footer {
           text-align: center;
           margin-top: 40px;
           color: var(--muted);
-          font-size: 13px;
-          font-family: 'Courier New', monospace;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: .08em;
         }
+        footer a { color: var(--muted); }
     </style>
 </head>
 <body>
+<div class="topbar">
+    <div class="inner">
+        <a class="brand" href="https://kronos1993.github.io/">
+            <img src="https://kronos1993.github.io/assets/logo.png" alt="" width="32" height="32">
+            Kronos Tech
+        </a>
+    </div>
+</div>
 <div class="wrap">
 
     <header>
         <h1>Privacy Policy</h1>
         <p>This Privacy Policy applies to <strong>Lumina Sound</strong> for Android, iOS and desktop, developed and published by <strong>Marcos Octavio Guerra Liso</strong>.</p>
-        <span class="meta">EFFECTIVE DATE · OCTOBER 6, 2026</span>
+        <span class="meta">EFFECTIVE DATE · OCTOBER 14, 2026</span>
     </header>
 
     <section>
@@ -122,45 +169,59 @@
     </section>
 
     <section>
-        <h2>4. Purchases</h2>
+        <h2>4. Analytics (Android and iOS)</h2>
+        <p>On Android and iOS, the app uses <strong>Google Analytics for Firebase</strong> to understand how the app is used and to improve it. Only the events Firebase collects automatically are used, such as app opens, sessions, app updates, and in-app purchases. With them, Firebase receives an app instance identifier, your device model, operating system and app version, language, and approximate location (country or region) derived from your IP address.</p>
+        <ul>
+            <li>The app does not send your music library, file names, playlists or listening history to Firebase.</li>
+            <li>Analytics follows the consent you give in Google's consent form in the regions where consent applies, and you can change it from <strong>Settings → Privacy choices</strong>.</li>
+            <li>The desktop version contains no analytics SDK.</li>
+        </ul>
+        <p>Learn more in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy and Security in Firebase</a>.</p>
+    </section>
+
+    <section>
+        <h2>5. Purchases</h2>
         <p>Premium is a one-time purchase. On Android and iOS, payments are processed by <strong>Google Play</strong> or the <strong>Apple App Store</strong>, and the purchase is verified through <strong>RevenueCat</strong>, which receives your purchase receipt and an anonymous app user ID. On desktop, Premium is unlocked with a license key sold and validated by <strong>Lemon Squeezy</strong>. The app sends the key and an activation identifier to Lemon Squeezy to validate it, and stores them on your device. We never receive your payment card details.</p>
     </section>
 
     <section>
-        <h2>5. Other Third-Party Services</h2>
+        <h2>6. Other Third-Party Services</h2>
         <p>Some features contact third-party services directly from your device. These services receive your IP address as part of the request.</p>
         <ul>
             <li><strong>Lyrics:</strong> to find lyrics, the app sends the track's title, artist, album and duration to <a href="https://lrclib.net" target="_blank" rel="noopener">LRCLIB</a>.</li>
             <li><strong>Podcasts:</strong> podcast search and top charts use Apple's public iTunes Search and podcast chart services, which receive your search terms (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>). Podcast feeds and episodes are downloaded from each podcast's own hosting server.</li>
+            <li><strong>Equalizer headphone profiles:</strong> when you look up a headphone model for AutoEQ, the app downloads its profile from the public <a href="https://github.com/jaakkopasanen/AutoEq" target="_blank" rel="noopener">AutoEq</a> project hosted on GitHub (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>).</li>
+            <li><strong>Scrobbling (optional):</strong> if you connect a <a href="https://www.last.fm/legal/privacy" target="_blank" rel="noopener">Last.fm</a> or <a href="https://metabrainz.org/privacy" target="_blank" rel="noopener">ListenBrainz</a> account in Settings, the app sends the title, artist, album and time of the tracks you play to that account. Your session key or user token is stored only on your device, and you can disconnect at any time.</li>
             <li><strong>Streams you open:</strong> when you play an audio link you enter, the app connects to the server hosting it.</li>
-            <li><strong>Payments and ads:</strong> Google Play, the Apple App Store, <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>, <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">Lemon Squeezy</a> and Google AdMob, as described above.</li>
+            <li><strong>Payments, ads and analytics:</strong> Google Play, the Apple App Store, <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>, <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">Lemon Squeezy</a>, Google AdMob and Google Analytics for Firebase, as described in this policy.</li>
         </ul>
-        <p>We do not sell your personal information. We do not use analytics or crash-reporting SDKs.</p>
+        <p>We do not sell your personal information. We do not use crash-reporting SDKs.</p>
     </section>
 
     <section>
-        <h2>6. Your Choices &amp; Rights</h2>
+        <h2>7. Your Choices &amp; Rights</h2>
         <ul>
-            <li>Change your ad consent at any time from <strong>Settings → Privacy choices</strong> in the app (shown where consent applies).</li>
+            <li>Change your ad and analytics consent at any time from <strong>Settings → Privacy choices</strong> in the app (shown where consent applies).</li>
             <li>On iOS, change tracking permission in <strong>Settings → Privacy &amp; Security → Tracking</strong>. On Android, you can reset or delete your advertising ID in your device's Google settings.</li>
             <li>Grant or revoke media, Music library and microphone permissions from your device's system settings.</li>
+            <li>Disconnect Last.fm or ListenBrainz scrobbling at any time from the app's Settings.</li>
             <li>Delete all data stored by the app by clearing its storage or uninstalling it.</li>
-            <li>Depending on where you live (for example under the GDPR or US state laws), you may have rights to access, delete or object to the processing of your personal data. Because we do not hold your data on our servers, requests about advertising data are best directed to Google, but you can always contact us and we will help.</li>
+            <li>Depending on where you live (for example under the GDPR or US state laws), you may have rights to access, delete or object to the processing of your personal data. Because we do not hold your data on our servers, requests about advertising and analytics data are best directed to Google, but you can always contact us and we will help.</li>
         </ul>
     </section>
 
     <section>
-        <h2>7. Children's Privacy</h2>
+        <h2>8. Children's Privacy</h2>
         <p>Lumina Sound is not directed at children under the age of 13, and we do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us so we can address it.</p>
     </section>
 
     <section>
-        <h2>8. Changes to This Policy</h2>
+        <h2>9. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time to reflect changes in the app or applicable law. Material changes will be reflected by updating the effective date at the top of this page.</p>
     </section>
 
     <section>
-        <h2>9. Contact Us</h2>
+        <h2>10. Contact Us</h2>
         <p>If you have any questions about this Privacy Policy or how your information is handled, you can reach us at:</p>
         <div class="contact-box">
             <strong>Marcos Octavio Guerra Liso</strong><br>
